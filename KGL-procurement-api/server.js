@@ -15,7 +15,7 @@ const writeData = (data) => {
   fs.writeFileSync(FILE, JSON.stringify(data, null, 2));
 };
 
-http.createServer((req, res) => {
+const server = http.createServer((req, res) => {
 
   // GET /kgl/procurement
   if (req.method === "GET" && req.url === "/kgl/procurement") {
@@ -47,9 +47,13 @@ http.createServer((req, res) => {
   }
 
   // Invalid route
-  res.writeHead(404);
-  res.end("Route not found");
+  res.writeHead(404, { "Content-Type": "application/json" });
+  res.end(JSON.stringify({ error: "Route not found" }));
+});
 
-}).listen(3000, () => {
-  console.log("Server running on http://localhost:3000");
+// listen to server
+const PORT = process.env.PORT || 3000;
+
+server.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server running on port ${PORT}`);
 });
