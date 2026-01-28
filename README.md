@@ -117,13 +117,3 @@ The server will run on:
 ```
 http://localhost:3000
 ```
-
----
-
-## Deployment
-
-The API is deployed using **Render**.
-
-**Live URL:**
-*[https://your-render-url.onrender.com](https://your-render-url.onrender.com)*
-
