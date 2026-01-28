@@ -1,0 +1,15 @@
+[
+  {
+    "id": 1769581967056,
+    "productName": "Beans",
+    "productType": "Grain",
+    "date": "2026-01-28",
+    "time": "09:30",
+    "tonnage": 1200,
+    "cost": 4500000,
+    "dealerName": "Karibu Ltd",
+    "branch": "Maganjo",
+    "contact": "0701234567",
+    "sellingPrice": 2000
+  }
+]
