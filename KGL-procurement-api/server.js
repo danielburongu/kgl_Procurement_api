@@ -17,6 +17,16 @@ const writeData = (data) => {
 
 const server = http.createServer((req, res) => {
 
+  // ROOT
+  if (req.method === "GET" && req.url === "/") {
+    res.writeHead(200, { "Content-Type": "application/json" });
+    return res.end(JSON.stringify({
+      status: "OK",
+      service: "KGL Procurement API",
+      version: "1.0.0"
+    }));
+  }
+
   // GET /kgl/procurement
   if (req.method === "GET" && req.url === "/kgl/procurement") {
     res.writeHead(200, { "Content-Type": "application/json" });
